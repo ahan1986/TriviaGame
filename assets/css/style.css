@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+}
+html {
+    box-sizing: border-box;
+}
+img {
+    max-width: 30%;
+}
