@@ -4,9 +4,11 @@ body {
 * {
     box-sizing: border-box;
 }
-
+img:nth-child(2) {
+    max-width: 200px;
+}
 img {
-    max-width: 30%;
+    width: 40%;
 }
 h1:nth-child(1) {
     color: #ccc;
