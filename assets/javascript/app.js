@@ -90,7 +90,7 @@ $(document).ready(function () {
     //hiding the "time remaining" portion in the html
     $(".RT").hide();
     $("button").on("click", function () {
-        // if the restarting is false, it will go into the restart function and zero everything. This was necessary because without this, every time I restarted the game, it counted down starting at zero and into the negatives. 
+        // if the restarting is false, it will go into the restart function and zero everything. This was necessary because without this, every time I restarted the game, it counted down starting at zero and into the negatives.
         if (restarting === false) {
             restarting = true;
             restart();
@@ -135,8 +135,8 @@ $(document).ready(function () {
     // every time I get a question correct, it will take me to this function which says you've got the question right and some pictures.  This will also have a setTimeout function which will wait about 3 seconds and then move on to the next question. (trying not to add any functions within a function to create a recurison.... I've done that with the previous jQuery homework)
     function greatJob() {
         if (nextQuestion == questions.length - 1) {
-            imagesHere = questions[nextQuestion][6];
-            answerText = questions[nextQuestion][7];
+            imagesHere = questions[nextQuestion][6]; //I needed to have these variables redefined again inside this function because having this outside in the global did not update the next question in this function.  
+            answerText = questions[nextQuestion][7];// same goes for this and the following variables redefined inside a function because only in this function the variables are actually updated and can be used.
             $("#choices").hide();
             $("#question").html("<h1> Correct! <br>" + answerText + "</h1>");
             $("#images").show().html(imagesHere);
@@ -155,7 +155,7 @@ $(document).ready(function () {
         nextQuestion++;// adding 1 so that we can move on to the next question in the array at the top
         answerVar = questions[nextQuestion][5];
         setTimeout(function () {
-            start();
+            start();// this will start the counter again
             $("#images").hide();
             $("#choices").show();
             $("#question").html("<h3>" + questions[nextQuestion][0] + "</h3>");
