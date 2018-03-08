@@ -33,4 +33,6 @@ h1:nth-child(1) {
 .grad1 {
     font-size: 30px;
 }
-
+h4 {
+    cursor: pointer;
+}
